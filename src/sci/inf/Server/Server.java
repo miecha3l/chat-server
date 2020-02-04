@@ -56,7 +56,7 @@ public class Server {
 
     private String getIncomingMessages(){
         String ret = "";
-        for(var msg : instance.incomingMessages) ret += msg.toString() + "\n";
+        for(Message msg : instance.incomingMessages) ret += msg.toString() + "\n";
         return ret;
     }
 
@@ -68,7 +68,7 @@ public class Server {
 
         @Override
         public void run() {
-            var sc = new Scanner(System.in);
+            Scanner sc = new Scanner(System.in);
             while(Server.getInstance().isRunning){
                 var msg = sc.next();
 

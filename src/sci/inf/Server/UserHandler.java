@@ -72,7 +72,7 @@ public class UserHandler implements Runnable {
             while(Server.getInstance().isRunning){
                 List<User> toRemove = new ArrayList<>();
                 for(int i = 0 ; i < Server.getInstance().users.size(); i++){
-                    var u = Server.getInstance().users.get(i);
+                    User u = Server.getInstance().users.get(i);
                     if(!u.isOnline()) {
                         System.out.println("User is offline: " + u.username);
                         toRemove.add(u);
@@ -81,7 +81,7 @@ public class UserHandler implements Runnable {
 
                 synchronized (Server.getInstance().users){
                     //remove users from server list
-                    for(var i : toRemove) {
+                    for(User i : toRemove) {
                         Server.getInstance().users.remove(i);
                     }
                 }

@@ -17,7 +17,7 @@ public class Message {
     }
 
     public static Message parseStr(String req){
-        var arr = req.split(";");
+        String[] arr = req.split(";");
         try{
             return new Message(arr[0], arr[1], arr[2]);
         }

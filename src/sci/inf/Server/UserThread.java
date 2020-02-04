@@ -27,10 +27,10 @@ public class UserThread implements Runnable {
         while(this.isActive && user.isOnline()){
             try {
                 if(user.in.available() > 0){
-                    var msg = user.in.readUTF();
+                    String msg = user.in.readUTF();
                     System.out.println("Incoming msg: " + msg);
 
-                    var parsed = Message.parseStr(msg);
+                    Message parsed = Message.parseStr(msg);
                     if(parsed != null) Server.getInstance().incomingMessages.push(parsed);
                 }
 
